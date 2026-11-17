@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #eef2ef;
+  --card: #ffffff;
+  --ink: #121a17;
+  --muted: #5c6b64;
+  --line: #d5ddd8;
+  --accent: #0f7a5a;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  color: var(--ink);
+  background:
+    radial-gradient(1200px 500px at 10% -10%, #d8f0e7 0%, transparent 55%),
+    radial-gradient(900px 400px at 100% 0%, #e7ece8 0%, transparent 50%),
+    var(--bg);
+}
+
+@layer components {
+  .card {
+    @apply rounded-2xl border border-[var(--line)] bg-[var(--card)] p-5 shadow-sm;
+  }
+
+  .card-title {
+    @apply text-sm font-semibold uppercase tracking-wide text-[var(--muted)];
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center rounded-xl bg-accent px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-[#0c654a] disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center rounded-xl border border-[var(--line)] bg-white px-4 py-2.5 text-sm font-semibold text-ink-800 transition hover:bg-ink-50 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .field {
+    @apply w-full rounded-xl border border-[var(--line)] bg-white px-3 py-2.5 text-sm outline-none ring-accent focus:ring-2;
+  }
+}
